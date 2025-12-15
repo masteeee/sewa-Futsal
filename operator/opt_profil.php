@@ -125,7 +125,8 @@ if($_GET['lap']=="delete"){
           </div>
           <button onclick="myFunction('Demo3')" class="w3-btn-block w3-theme-l1 w3-left-align"><i class="fa fa-tags fa-fw w3-margin-right"></i> Pembayaran</button>
           <div id="Demo3" class="w3-accordion-content w3-container">
-			<a href="opt_profil.php?url=bayaroff"> Bayar Offline</a>
+			      <a href="opt_profil.php?url=lihatsemua"> Lihat Semua</a>
+            <a href="opt_profil.php?url=bayaroff"> Bayar Offline</a>
             <a href="opt_profil.php?url=pesanbayaroff"> Bayar Pesan Offline</a>
 			
           </div>
@@ -183,7 +184,7 @@ if($_GET['lap']=="delete"){
 						$string = '';
 						for ($i = 0; $i < $panjang; $i++) {
 					  $pos = rand(0, strlen($karakter)-1);
-					  $string .= $karakter{$pos};
+					  $string .= $karakter[$pos];
 						}
 						return $string;
 						}
@@ -387,6 +388,10 @@ if($_GET['lap']=="delete"){
         </div>
       </div>
        <?php
+	   		}elseif($_GET['url']=="lihatsemua"){
+				include "opt_lihat_semua_pembayaran.php";
+      ?>
+      <?php
 	   		}elseif($_GET['url']=="bayaroff"){
 				include "opt_bayar_offline.php";
       ?>
